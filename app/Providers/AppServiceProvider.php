@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Dusk\DuskServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
