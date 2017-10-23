@@ -1,9 +1,15 @@
 /node_modules
-/public/storage
 /public/hot
+/public/storage
+/public/css/*.css
+/public/js/*.js
+/public/mix-manifest.json
 /storage/*.key
 /vendor
 /.idea
+/.vagrant
 Homestead.json
 Homestead.yaml
+npm-debug.log
 .env
+.DS_Store

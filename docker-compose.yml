@@ -1,0 +1,27 @@
+version: '2'
+services:
+  postgres:
+    container_name: pmo-postgres
+    # psql --user=webapp --port=5743 --password --host=0.0.0.0
+    # DATABASE_URL=postgres://webapp:secret@localhost:5743/webapp?sslmode=disable
+    image: postgres:9.4
+    ports:
+      - "5743:5432"
+    # volumes:
+    #   - "./db/:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: webapp
+      POSTGRES_DB: webapp
+
+  postgres_test:
+    container_name: pmo-test-postgres
+    # psql --user=webapp --port=5744 --password --host=0.0.0.0
+    # DATABASE_URL=postgres://webapp:secret@localhost:5744/webapp?sslmode=disable
+    image: postgres:9.4
+    ports:
+      - "5744:5432"
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: webapp
+      POSTGRES_DB: webapp
