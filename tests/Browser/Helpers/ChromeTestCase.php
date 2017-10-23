@@ -36,7 +36,7 @@ class ChromeTestCase extends TestCase
     {
         $tables = \DB::connection()->getDoctrineSchemaManager()->listTableNames();
         foreach ($tables as $table) {
-            if ($table !== 'countries' && $tablephp  !== 'migrations') {
+            if ($table !== 'countries' && $table  !== 'migrations') {
                 // SQLi: the tables names come from PostgreSQL, so there shouldn't be a injection possible here
                 // and we don't have a method to escape table name in PDO
 
