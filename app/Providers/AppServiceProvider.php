@@ -1,0 +1,50 @@
+<?php
+
+namespace App\Providers;
+
+use App\Channel;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\ServiceProvider;
+use Laravel\Dusk\DuskServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+        Schema::defaultStringLength(191);
+
+        \View::composer('*', function ($view) {
+            $channels = Cache::rememberForever('channel', function () {
+                return Channel::all();
+            });
+            $view->with('channels', $channels);
+        });
+
+        Validator::extend('spamfree', "App\Rules\SpamFree@passes");
+    }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        if ($this->app->isLocal()) {
+            $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
+        }
+
+        if ($this->app->environment('local', 'testing')) {
+            $this->app->register(DuskServiceProvider::class);
+        }
+        //
+    }
+}

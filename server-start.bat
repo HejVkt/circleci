@@ -1,0 +1,1 @@
+"C:\home\php7.1\php.exe" -S localhost:8001 "C:\home\www\forum.my"/server.php"
