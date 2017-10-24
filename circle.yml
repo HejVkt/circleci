@@ -20,7 +20,7 @@ machine:
 
 dependencies:
   override:
-    - composer install
+    - composer install --no-dev
     - yarn
 
 test:
