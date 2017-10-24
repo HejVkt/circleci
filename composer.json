@@ -21,7 +21,15 @@
         "predis/predis": "^1.1",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~6"
+        "phpunit/phpunit": "~6",
+        "niklasravnsborg/laravel-pdf": "^1.5",
+        "paquettg/php-html-parser": "^1.7",
+        "roave/security-advisories": "dev-master",
+        "sentry/sentry": "^1.6",
+        "sentry/sentry-laravel": "^0.7.0",
+        "topface/petrovich-php": "dev-master",
+        "webpatser/laravel-uuid": "^3.0",
+        "wpb/string-blade-compiler": "^3.5.1"
     },
     "require-dev": {
         "laravel/dusk": "^1.1",
