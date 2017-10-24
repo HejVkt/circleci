@@ -1,11 +1,17 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+      "framework",
+      "laravel"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=7.1.0",
+        "ext-gd": "*",
+        "andre_487/php_rutils": "^1.2",
+        "barryvdh/laravel-debugbar": "^2.4",
         "barryvdh/laravel-ide-helper": "2.*",
         "dmore/chrome-mink-driver": "^2.3",
         "doctrine/dbal": "^2.6",
@@ -63,6 +69,7 @@
             ]
         }
     },
+
     "minimum-stability": "dev",
     "prefer-stable": true
 }
